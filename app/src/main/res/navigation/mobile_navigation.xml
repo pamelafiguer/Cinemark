@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="es.maick.apkcinemark.ui.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_navigation_splash_to_navigation_peliculas"
+            app:destination="@id/navigation_peliculas" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_peliculas"
+        android:name="es.maick.apkcinemark.ui.Peliculas"
+        android:label="fragment_peliculas"
+        tools:layout="@layout/fragment_peliculas" >
+        <action
+            android:id="@+id/action_navigation_peliculas_to_navigation_confiteria"
+            app:destination="@id/navigation_confiteria" />
+        <action
+            android:id="@+id/action_navigation_peliculas_to_navigation_cines"
+            app:destination="@id/navigation_cines" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_confiteria"
+        android:name="es.maick.apkcinemark.ui.Confiteria"
+        android:label="fragment_confiteria"
+        tools:layout="@layout/fragment_confiteria" />
+    <fragment
+        android:id="@+id/navigation_cines"
+        android:name="es.maick.apkcinemark.ui.Cines"
+        android:label="fragment_cines"
+        tools:layout="@layout/fragment_cines" />
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="es.maick.apkcinemark.ui.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+</navigation>
