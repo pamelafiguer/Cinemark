@@ -10,6 +10,6 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:contentDescription="@string/contentdescription"
-      android:src="@drawable/Cinemark_Logo"
+      android:src="@drawable/logo"/>
 
 </FrameLayout>
