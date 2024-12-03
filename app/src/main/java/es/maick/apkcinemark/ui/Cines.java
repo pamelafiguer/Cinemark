@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import es.maick.apkcinemark.R;
 import es.maick.apkcinemark.databinding.FragmentCinesBinding;
 
@@ -39,6 +41,12 @@ public class Cines extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         context = getContext();
         navController = Navigation.findNavController( view );
+
+        Picasso.get()
+                .load("https://oaemdl.es/images/cinemark/cines/Cinemark%20Angamos.web")
+                .placeholder( R.drawable.ic_mapa )
+                .error( R.drawable.ic_mapa )
+                .into( binding.ivCineFavorito );
 
     }
 }

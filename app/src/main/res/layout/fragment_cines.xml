@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,15 +11,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/contentdescription"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_mapa"
+        android:text="@string/cines"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/ivMapa"
+        android:id="@+id/icMapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/contentdescription"
@@ -27,7 +26,7 @@
         android:focusable="true"
         android:src="@drawable/ic_mapa"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tvCiudad"
@@ -37,7 +36,7 @@
         android:clickable="true"
         android:focusable="true"
         android:text="Lima"
-        app:drawableEndCompact="@drawable/ic_gps"
+        app:drawableEndCompat="@drawable/ic_gps"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -65,21 +64,58 @@
         android:layout_marginTop="10dp"
         android:text="Favoritos"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/rvCinesGPS"
+        app:layout_constraintTop_toBottomOf="@id/rvCinesGPS"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivCineFavorito"
-        android:layout_width="150dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCineFavorito"
+        android:layout_width="180dp"
         android:layout_height="200dp"
         android:layout_marginTop="10dp"
-        android:contentDescription="@string/contentdescription"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_mapa"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintTop_toBottomOf="@id/tv01"
-        app:layout_constraintStart_toStartOf="parent" />
-    
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivCineFavorito"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/contentdescription"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_mapa" />
+
+            <TextView
+                android:id="@+id/tvCineFavorito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:background="@drawable/sh_bg_rounder_gray"
+                android:drawablePadding="8dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/cp_heart"/>
+
+            <TextView
+                android:id="@+id/tvCineGPS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_gravity="bottom"
+                android:padding="5dp"
+                android:background="@drawable/sh_bg_rounder_gray"
+                android:drawablePadding="5dp" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/tv02"
         android:layout_width="wrap_content"
@@ -87,7 +123,7 @@
         android:layout_marginTop="10dp"
         android:text="Otros cines"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/ivCineFavorito"
+        app:layout_constraintTop_toBottomOf="@id/cvCineFavorito"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -97,5 +133,4 @@
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/tv02"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
